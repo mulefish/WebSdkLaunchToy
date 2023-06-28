@@ -1,19 +1,33 @@
-// import useExternalScript from './useExternalScript.js'
+// I thought I would need a bunch of different externnal scripts so 
+// I built this out to be pretty robust...   ...In hindsight this ( and useCDNResource.jsx )
+// is overkill... 
+
 import useCDNResource from './useCDNResource.jsx'
 import { useState, useEffect } from 'react';
 
 export function useLoadAllScripts() {
-    function getIsReady() { 
+    function getIsReady() {
         return ready
     }
-    const adobedtmUrl = "https://assets.adobedtm.com/7a84fdea953b/09aece6f582f/launch-e6cc9ebc113b-development.min.js"
-    const adobedtmStatus = useCDNResource(adobedtmUrl)
+    const adobedtmUrl = "https://assets.adobedtm.com/7a84fdea953b/09aece6f582f/launch-e6cc9ebc113b-development.min.js";
+    const thing = "https://assets.adobedtm.com/7a84fdea953b/aca65f0ced29/launch-183d8bb9556f-development.min.js"
+    let statusii = {
+        adobedtmUrl : useCDNResource(adobedtmUrl),
+        thing : useCDNResource(thing)
+    } 
+
     const [ready, setReady] = useState(false)    
     useEffect(() => {
-        if ( adobedtmStatus === "ready" ) {
-            setReady(true)
+        let isOk = true 
+        for ( let k in statusii ) { 
+            console.log( k + " andd |" + statusii[k] + "|")
+            if ( statusii[k] !== "ready") {
+                isOk = false 
+            }
         }
-    }, [adobedtmStatus]);
+        setReady(isOk)
+    }, [statusii]);
+
     return {getIsReady };
 }
 

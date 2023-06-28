@@ -8,10 +8,10 @@ function Links() {
       </a>
       &nbsp;{' '}
       <a
-        href="https://github.com/mulefish/stackblitz-adobe-launch"
+        href="https://github.com/mulefish/WebSdkLaunchToy"
         target="_blank"
       >
-        github
+        WebSdkLaunchToy
       </a>
       &nbsp;{' '}
       <a href="https://lululemon.atlassian.net/wiki/spaces/DCP/pages/3235746045/Understand+Document+how+Adobe+Edge+Works+-+DATASE+394">
