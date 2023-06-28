@@ -1,0 +1,89 @@
+// import useExternalScript from './useExternalScript.js'
+// import useCDNResource from './useCDNResource.jsx'
+import useLoadAllScripts from './useLoadAllScripts.jsx'; 
+import Links from './links.jsx';
+import React from 'react';
+import useLogic from './useLogic.js';
+// import Launch from './launch.jsx';
+import { blue, green } from './common.js';
+import { useState, useEffect } from 'react';
+const LOCAL_STORAGE_KEY = 'LOCAL_STORAGE_KEY';
+
+// import AdobeSDKThing from './adobe.jsx';
+
+
+
+
+function App() {
+    const { count, increment, decrement } = useLogic();
+    const [textareaValue, setTextareaValue] = useState('');
+    const [storedValue, setStoredValue] = useState('');
+    const [hasLoadedEverything, setHasLoadedEverything] = useState("nope")
+    const handleTextareaChange = (event) => {
+        const value = event.target.value;
+        setTextareaValue(value);
+    };
+
+    const updateLocalStorage = () => {
+        localStorage.setItem(LOCAL_STORAGE_KEY, textareaValue);
+    };
+
+
+    useEffect(() => {
+        setStoredValue(localStorage.getItem(LOCAL_STORAGE_KEY));
+        if (storedValue) {
+            setTextareaValue(storedValue);
+        } else {
+        }
+    }, [storedValue]);
+
+    const allScripts = useLoadAllScripts() 
+
+    // const externalScript = 'https://player.live-video.net/1.6.1/amazon-ivs-player.min.js';
+    // const scriptStatus = useExternalScript(externalScript);
+    // const adobedtmUrl = "https://assets.adobedtm.com/7a84fdea953b/09aece6f582f/launch-e6cc9ebc113b-development.min.js"
+    // const adobedtmStatus = useCDNResource(adobedtmUrl)
+    
+    // useEffect(() => {
+    //     if (scriptStatus === 'ready') {
+    //         // Do something with it
+    //     }
+    // }, [scriptStatus]);
+
+
+    useEffect(()=>{
+        if ( allScripts.getIsReady() === true ) { 
+            green( "HELLO " + allScripts.getIsReady() )
+        }
+    }, [allScripts.getIsReady()]) 
+
+    return (
+        <div>
+            <div>
+                <h1>Count: {count}</h1>
+                <button onClick={increment}>Increment</button>
+                <button onClick={decrement}>Decrement</button>
+            </div>
+            <hr></hr>
+            {/* { adobedtmStatus }  */}
+            {/* {allTheExternalLibsAreLoadedSemaphore} */}
+            { hasLoadedEverything }
+            {/* <Launch /> */}
+
+            <Links />
+            <br></br>
+            {/* <AdobeSDKThing /> */}
+            <hr></hr>
+            <button onClick={() => updateLocalStorage()}>update localstorage</button>
+            <hr></hr>
+            <textarea
+                rows="10"
+                cols="20"
+                value={textareaValue}
+                onChange={handleTextareaChange}
+            />
+        </div>
+    );
+}
+
+export default App;
