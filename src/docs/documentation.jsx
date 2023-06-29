@@ -3,6 +3,8 @@ import React from 'react';
 import step1_waffle from './step1_wafle.png';
 import step2_data_collection from './step2_data_collection.png';
 import step3_hamburger from './step3_hamburger.png';
+import step4_schemas from './step4_schemas.png';
+import step5_create_schema from './step5_create_schema.png'
 
 function Documentation() {
 
@@ -26,7 +28,16 @@ function Documentation() {
 
                 </li>
 
+                <li>
+                step4_schemas<br />
+                    <img src={step4_schemas} width="200" alt="step4_schemas" />
 
+                </li>
+                <li>
+                step5_create_schema<br />
+                    <img src={step5_create_schema} width="200" alt="step5_create_schema" />
+
+                </li>
 
             </ul>
 
