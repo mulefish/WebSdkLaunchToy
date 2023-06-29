@@ -1,11 +1,6 @@
-// I thought I would need a bunch of different externnal scripts so 
-// I built this out to be pretty robust...   
-// ...In hindsight this and useCDNResource.jsx are overkill... 
-
-import useCDNResource from './useCDNResource.jsx'
+import useCDNResource from './useInjectScript.jsx'
 import { useState, useEffect } from 'react';
-import { statuses } from './common.js';
-
+import { statuses } from '../common.js';
 
 export function useLoadAllScripts() {
     function getIsReady() {
@@ -16,8 +11,7 @@ export function useLoadAllScripts() {
     let statusii = {
         adobedtmUrl : useCDNResource(adobedtmUrl),
         launchUrl : useCDNResource(launchUrl)
-    } 
-
+    }
     const [ready, setReady] = useState(false)    
     useEffect(() => {
         let isOk = true 

@@ -1,4 +1,4 @@
-import useLoadAllScripts from './useLoadAllScripts.jsx'; 
+import useLoadAllScripts from './cndResources/useInjectAllScripts.jsx'; 
 import Links from './links.jsx';
 import React from 'react';
 import { statuses } from './common.js';
@@ -61,5 +61,4 @@ function App() {
         </div>
     );
 }
-
 export default App;

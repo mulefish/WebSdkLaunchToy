@@ -3,7 +3,7 @@
 // hook to deal with this.
 
 import { useEffect, useState } from 'react';
-import { statuses } from './common.js';
+import { statuses } from '../common.js';
 
 export const useCDNResource = (url) => {
     const [state, setState] = useState(url ? statuses.LOADING : statuses.IDLE);
