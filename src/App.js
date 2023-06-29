@@ -34,7 +34,15 @@ function App() {
             setHasLoadedEverything( statuses.READY)
         }
     }, [allScripts.getIsReady()]) 
-
+    const doSatellite = () => { 
+        console.log(" hasLoadedEverything=" + hasLoadedEverything )
+        try { 
+        eval(`_satellite.track("lam", { "goat":"penny"       })`) 
+        console.log("DO THIS!!")
+        } catch ( failbot) {
+            console.log( failbot)
+        }
+    }
     return (
         <div>
             { hasLoadedEverything }
@@ -49,6 +57,7 @@ function App() {
                 value={textareaValue}
                 onChange={handleTextareaChange}
             />
+            <button onClick={()=>doSatellite()}>satellite!!!</button>
         </div>
     );
 }
