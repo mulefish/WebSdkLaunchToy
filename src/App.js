@@ -1,21 +1,11 @@
-// import useExternalScript from './useExternalScript.js'
-// import useCDNResource from './useCDNResource.jsx'
 import useLoadAllScripts from './useLoadAllScripts.jsx'; 
 import Links from './links.jsx';
 import React from 'react';
-import useLogic from './useLogic.js';
-// import Launch from './launch.jsx';
 import { blue, green } from './common.js';
 import { useState, useEffect } from 'react';
 const LOCAL_STORAGE_KEY = 'LOCAL_STORAGE_KEY';
 
-// import AdobeSDKThing from './adobe.jsx';
-
-
-
-
 function App() {
-    const { count, increment, decrement } = useLogic();
     const [textareaValue, setTextareaValue] = useState('');
     const [storedValue, setStoredValue] = useState('');
     const [hasLoadedEverything, setHasLoadedEverything] = useState("nope")
@@ -59,20 +49,10 @@ function App() {
 
     return (
         <div>
-            <div>
-                <h1>Count: {count}</h1>
-                <button onClick={increment}>Increment</button>
-                <button onClick={decrement}>Decrement</button>
-            </div>
-            <hr></hr>
-            {/* { adobedtmStatus }  */}
-            {/* {allTheExternalLibsAreLoadedSemaphore} */}
             { hasLoadedEverything }
-            {/* <Launch /> */}
 
             <Links />
             <br></br>
-            {/* <AdobeSDKThing /> */}
             <hr></hr>
             <button onClick={() => updateLocalStorage()}>update localstorage</button>
             <hr></hr>
