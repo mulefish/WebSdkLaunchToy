@@ -4,6 +4,7 @@ import React from 'react';
 import { statuses } from './common.js';
 import { useState, useEffect } from 'react';
 import Documentation from './docs/documentation.jsx';
+import ExampleUsage from './docs/exampleUsage.jsx';
 
 const LOCAL_STORAGE_KEY = 'LOCAL_STORAGE_KEY';
 
@@ -63,6 +64,8 @@ function App() {
             <button onClick={()=>doSatellite()}>satellite!!!</button>
 
             <Documentation />
+            <hr></hr>
+            <ExampleUsage /> 
         </div>
     );
 }

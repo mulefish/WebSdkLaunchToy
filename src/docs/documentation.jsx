@@ -5,6 +5,7 @@ import step2_data_collection from './step2_data_collection.png';
 import step3_hamburger from './step3_hamburger.png';
 import step4_schemas from './step4_schemas.png';
 import step5_create_schema from './step5_create_schema.png'
+import step6_experience_event from "./step6_experience_event.png"
 
 function Documentation() {
 
@@ -38,6 +39,14 @@ function Documentation() {
                     <img src={step5_create_schema} width="200" alt="step5_create_schema" />
 
                 </li>
+
+                <li>
+                step6_experience_event<br />
+                    <img src={step6_experience_event} width="200" alt="step6_experience_event" />
+
+                </li>
+
+
 
             </ul>
 
