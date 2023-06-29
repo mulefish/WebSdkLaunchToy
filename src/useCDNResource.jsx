@@ -1,18 +1,23 @@
+// Inject scripts into the page. 
+// Honestly? It is weird that React doesn't have some sort of built-in 
+// hook to deal with this.
+
 import { useEffect, useState } from 'react';
+import { statuses } from './common.js';
 
 export const useCDNResource = (url) => {
-    let [state, setState] = useState(url ? "loading" : "idle");
+    const [state, setState] = useState(url ? statuses.LOADING : statuses.IDLE);
 
     useEffect(() => {
         if (!url) {
-            setState("idle");
+            setState(statuses.IDLE);
             return;
         }
 
         let script = document.querySelector(`script[src="${url}"]`);
 
         const handleScript = (e) => {
-            setState(e.type === "load" ? "ready" : "error");
+            setState(e.type === statuses.LOAD ? statuses.READY : statuses.ERROR);
         };
 
         if (!script) {
@@ -21,16 +26,16 @@ export const useCDNResource = (url) => {
             script.src = url;
             script.async = true;
             document.body.appendChild(script);
-            script.addEventListener("load", handleScript);
-            script.addEventListener("error", handleScript);
+            script.addEventListener(statuses.LOAD, handleScript);
+            script.addEventListener(statuses.ERROR, handleScript);
         }
 
-        script.addEventListener("load", handleScript);
-        script.addEventListener("error", handleScript);
+        script.addEventListener(statuses.LOAD, handleScript);
+        script.addEventListener(statuses.ERROR, handleScript);
 
         return () => {
-            script.removeEventListener("load", handleScript);
-            script.removeEventListener("error", handleScript);
+            script.removeEventListener(statuses.LOAD, handleScript);
+            script.removeEventListener(statuses.ERROR, handleScript);
         };
     }, [url]);
 

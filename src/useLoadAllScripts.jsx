@@ -22,14 +22,13 @@ export function useLoadAllScripts() {
     useEffect(() => {
         let isOk = true 
         for ( let k in statusii ) { 
-            if ( statusii[k] !== "ready") {
+            if ( statusii[k] !== statuses.READY) {
                 isOk = false 
             }
         }
         setReady(isOk)
     }, [statusii]);
 
-    return {getIsReady };
+    return {getIsReady};
 }
-
 export default useLoadAllScripts;

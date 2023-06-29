@@ -1,7 +1,7 @@
 import useLoadAllScripts from './useLoadAllScripts.jsx'; 
 import Links from './links.jsx';
 import React from 'react';
-import { blue, green, statuses } from './common.js';
+import { statuses } from './common.js';
 import { useState, useEffect } from 'react';
 const LOCAL_STORAGE_KEY = 'LOCAL_STORAGE_KEY';
 
@@ -29,18 +29,6 @@ function App() {
 
     const allScripts = useLoadAllScripts() 
 
-    // const externalScript = 'https://player.live-video.net/1.6.1/amazon-ivs-player.min.js';
-    // const scriptStatus = useExternalScript(externalScript);
-    // const adobedtmUrl = "https://assets.adobedtm.com/7a84fdea953b/09aece6f582f/launch-e6cc9ebc113b-development.min.js"
-    // const adobedtmStatus = useCDNResource(adobedtmUrl)
-    
-    // useEffect(() => {
-    //     if (scriptStatus === 'ready') {
-    //         // Do something with it
-    //     }
-    // }, [scriptStatus]);
-
-
     useEffect(()=>{
         if ( allScripts.getIsReady() === true ) { 
             setHasLoadedEverything( statuses.READY)
@@ -50,9 +38,8 @@ function App() {
     return (
         <div>
             { hasLoadedEverything }
-
+            <br/>
             <Links />
-            <br></br>
             <hr></hr>
             <button onClick={() => updateLocalStorage()}>update localstorage</button>
             <hr></hr>

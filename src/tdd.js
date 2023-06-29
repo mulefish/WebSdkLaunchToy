@@ -7,7 +7,8 @@ function statusesTest() {
         'LOADING',
         'IDLE',
         'LOAD',
-        'READY'
+        'READY',
+        'ERROR'
     ]
     let isOk = true 
     expected.forEach((key)=> {

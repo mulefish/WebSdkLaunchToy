@@ -2,7 +2,8 @@ const statuses = {
   LOADING: "loading",
   IDLE: "idle",
   LOAD: "load",
-  READY: "ready"
+  READY: "ready", 
+  ERROR: "error"
 }
 
 function verdict(a, b, msg) {
