@@ -17,6 +17,13 @@ function Links() {
       <a href="https://lululemon.atlassian.net/wiki/spaces/DCP/pages/3235746045/Understand+Document+how+Adobe+Edge+Works+-+DATASE+394">
         confluence
       </a>
+      &nbsp;{' '}
+
+      <a href="https://github.com/adobe/alloy">
+        Adobe Alloy (  Note: npm run build - npm run dev )
+      </a>
+
+
     </span>
   );
 }
