@@ -1,7 +1,7 @@
 import useLoadAllScripts from './useLoadAllScripts.jsx'; 
 import Links from './links.jsx';
 import React from 'react';
-import { blue, green } from './common.js';
+import { blue, green, statuses } from './common.js';
 import { useState, useEffect } from 'react';
 const LOCAL_STORAGE_KEY = 'LOCAL_STORAGE_KEY';
 
@@ -43,7 +43,7 @@ function App() {
 
     useEffect(()=>{
         if ( allScripts.getIsReady() === true ) { 
-            green( "HELLO " + allScripts.getIsReady() )
+            setHasLoadedEverything( statuses.READY)
         }
     }, [allScripts.getIsReady()]) 
 
