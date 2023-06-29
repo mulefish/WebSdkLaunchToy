@@ -3,6 +3,8 @@ import Links from './links.jsx';
 import React from 'react';
 import { statuses } from './common.js';
 import { useState, useEffect } from 'react';
+import Documentation from './docs/documentation.jsx';
+
 const LOCAL_STORAGE_KEY = 'LOCAL_STORAGE_KEY';
 
 function App() {
@@ -53,11 +55,14 @@ function App() {
             <hr></hr>
             <textarea
                 rows="10"
-                cols="20"
+                cols="100"
                 value={textareaValue}
                 onChange={handleTextareaChange}
             />
+            <br></br>
             <button onClick={()=>doSatellite()}>satellite!!!</button>
+
+            <Documentation />
         </div>
     );
 }
