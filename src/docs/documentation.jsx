@@ -1,8 +1,6 @@
 import React from 'react';
-// import step1_waffle from './step1_waffle.png';
-import testImage from '../step1_waffle.png';
 
-import step1_waffle from './step1_wafle.png';
+import step1_waffle from './step1_waffle.png';
 import step2_data_collection from './step2_data_collection.png';
 import step3_hamburger from './step3_hamburger.png';
 import step4_schemas from './step4_schemas.png';
@@ -14,7 +12,6 @@ function Documentation() {
     return (
         <>
         
-        <img src={testImage}  alt="testImage" />
 
             <hr></hr>
             <ul>
