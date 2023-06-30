@@ -72,14 +72,12 @@ export default AdobeSDKThing;
         <div>
             <fieldset>
                 <legend>CDN style</legend>
-                <textarea rows="20" cols="110">
-                    {page}
+                <textarea rows="20" cols="110" defaultValue={page}>
                 </textarea>
             </fieldset>
             <fieldset>
                 <legend>Alloy React</legend>
-                <textarea rows="45" cols="110">
-                    {alloy}
+                <textarea rows="45" cols="110" defaultValue={alloy}>
                 </textarea>
             </fieldset>
         </div>

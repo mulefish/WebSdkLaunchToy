@@ -23,6 +23,11 @@ function Links() {
         Adobe Alloy (  Note: npm run build - npm run dev )
       </a>
 
+      &nbsp;{' '}
+      <a href="https://lululemon.atlassian.net/wiki/spaces/DCP/pages/3248884892/Setup+Mechanism+to+Read+LAM+and+send+to+WebSDK+in+Launch+-+DATASE-379+and+426">
+        confluence
+      </a>
+
 
     </span>
   );
