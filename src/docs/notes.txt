@@ -1,0 +1,45 @@
+https://www.youtube.com/watch?v=4GNW2QzD10A&ab_channel=adaptToConference
+Adobe 
+client, 
+target, 
+launch
+- What is 'data layer' - client side info to collect data. 
+4 possible things: 
+ -- 1: register, 
+ -- 2: trigger events, 
+ -- 3: get current state of data layer, 
+ -- 4: listen for specific events
+
+How to step 1: 
+<script src='cnd-path-to-adobe-client-lib.js' defer async></script>
+window.adobeDataLayer = window.adobeDataLayer || []
+window.adobeDataLayer.push({ "page": { "title":"getting started" }})
+
+
+
+
+
+
+.....
+steps
+- experience.adobe.com
+- waffle
+- dataCollection
+- hamburger
+- schemas
+- create schema
+- experience event
+
+wae-coco 
+- https://shop.lululemon.com/community
+- https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/installing-the-sdk.html?lang=en
+--  yarn add -W  @adobe/alloy 
+
+
+https://experienceleague.adobe.com/docs/experience-platform/edge/extension/data-element-types.html?lang=en#xdm-object
+
+CHROME PLUG IN 
+https://lululemon.atlassian.net/wiki/spaces/DCP/pages/2727249211/Debugging+Tracking+lululemon+Analytics+Chrome+Extension
+
+ACOP ML recording
+https://lululemon.sharepoint.com/sites/GlobalArchitectureCommunication/SitePages/ACOP-Calendar-%26-Recordings.aspx
